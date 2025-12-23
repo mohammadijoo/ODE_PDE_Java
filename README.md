@@ -431,9 +431,7 @@ The cart–pole uses classical Runge–Kutta 4th order (RK4). To generate smooth
 
 - choose a frame step $\Delta t_{\mathrm{frame}}=\frac{T}{N_{\mathrm{frames}}}$,
 - integrate using smaller physics steps:
-  $$
-  \Delta t_{\mathrm{phys}}=\frac{\Delta t_{\mathrm{frame}}}{N_{\mathrm{substeps}}}.
-  $$
+  $\Delta t_{\mathrm{phys}}=\frac{\Delta t_{\mathrm{frame}}}{N_{\mathrm{substeps}}}.$
 
 This keeps integration stable while preserving a deterministic “one frame → one PNG” pipeline.
 
