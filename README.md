@@ -359,25 +359,15 @@ especially when you include damping terms and external torque.
 Instead, the Java code uses a pragmatic engineering approach:
 
 1. Define the desired sliding surface derivative:
-   $$
-   \dot{s}_{\mathrm{des}}=-k\,\mathrm{sat}\left(\frac{s}{\phi}\right).
-   $$
+   $\dot{s}_{\mathrm{des}}=-k\,\mathrm{sat}\left(\frac{s}{\phi}\right).$
 2. Approximate $\dot{s}(u)$ locally as an affine function:
-   $$
-   \dot{s}(u)\approx a\,u+b.
-   $$
+   $\dot{s}(u)\approx a\,u+b.$
 3. Estimate $a$ and $b$ numerically using two evaluations of the nominal dynamics:
-   $$
-   a\approx \dot{s}(1)-\dot{s}(0),\qquad b\approx \dot{s}(0).
-   $$
+   $a\approx \dot{s}(1)-\dot{s}(0),\qquad b\approx \dot{s}(0).$
 4. Solve for the control:
-   $$
-   u_{\mathrm{smc}}=\frac{\dot{s}_{\mathrm{des}}-b}{a}.
-   $$
+   $u_{\mathrm{smc}}=\frac{\dot{s}_{\mathrm{des}}-b}{a}.$
 5. Apply actuator saturation:
-   $$
-   u=\mathrm{clamp}(u_{\mathrm{smc}}+u_{\mathrm{hold}},-u_{\max},u_{\max}).
-   $$
+   $u=\mathrm{clamp}(u_{\mathrm{smc}}+u_{\mathrm{hold}},-u_{\max},u_{\max}).$
 
 This is a common pattern in applied nonlinear control: *use model evaluations to avoid algebraic inversion*, while still enforcing a valid reaching law.
 
