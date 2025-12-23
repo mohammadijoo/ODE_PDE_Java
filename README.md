@@ -748,8 +748,6 @@ The phrase “start from a blank solution” is typically associated with Visual
   <li>Because the project is Maven-based, most users simply run via Maven and inspect outputs in <code>output/</code>.</li>
 </ul>
 
-If you specifically want the Visual Studio 2022 IDE workflow, you can still use it as an editor/terminal host, but compilation/execution will be via Maven commands (Java is not a native first-class project type in Visual Studio 2022).
-
 ---
 
 ### macOS (Homebrew)
